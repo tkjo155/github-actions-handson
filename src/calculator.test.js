@@ -16,6 +16,6 @@ test(`割り算が正しく動く`,()=> {
   expect(divide(10,2)).toBe(5);
 });
 
-test(`0で割るとエラーになる`,() => {
-  expect(divide(10,0)).toTrow(`0で割ることはできません`)
+test('0で割るとエラーになる', () => {
+  expect(() => divide(10,0)).toThrow('0で割ることはできません');
 });
