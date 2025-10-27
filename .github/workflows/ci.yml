@@ -1,0 +1,38 @@
+# ワークフローの名前
+name: CI Pipeline
+
+# いつ実行するのか
+on:
+ push:
+  branches: [main] # mainブランチにpushされたとき
+ pull_request:
+  branches: [main] # mainへのPRが作成されたとき
+
+# 実行する処理
+jobs:
+ # ジョブ名：test
+ test:
+  # 実行環境
+   runs-on: ubuntu-latest
+
+   #ジョブ内のステップ
+   steps:
+    # ステップ１: リポジトリのコートを取得
+    - name: コードをチェックアウト
+      uses: actions/checkout@v4
+    
+    # ステップ２: Node.jsをセットアップ
+    - name: Node.jsのセットアップ
+      uses: actions/setup-node@v4
+   
+    # ステップ３: 依存関係をインストール
+    - name: 依存関係のインストール
+      run: npm ci
+    
+    # ステップ４: テストを実行
+    - name: テストの実行
+      run: npm test
+    
+    # ステップ５: テスト成功を通知
+    - name: 成功メッセージ
+      run: echo "✅全てのテストが成功しました！"
