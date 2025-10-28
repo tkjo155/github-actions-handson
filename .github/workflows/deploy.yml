@@ -3,8 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'public/**'  # publicフォルダの変更時に実行
   workflow_dispatch:
-
+  
 permissions:
   contents: read
   pages: write
