@@ -1,12 +1,15 @@
 name: Update Weather Data
 
-# トリガー: 1時間ごと + 手動実行 + push時
 on:
   schedule:
-    - cron: '0 * * * *'  # 毎時0分に実行
-  workflow_dispatch:  # 手動実行を許可
+    - cron: '0 * * * *'
+  workflow_dispatch:
   push:
     branches: [ main ]
+
+# 👇 この部分を追加
+permissions:
+  contents: write  # リポジトリへの書き込み権限
 
 jobs:
   update-weather:
@@ -15,6 +18,8 @@ jobs:
     steps:
       - name: コードをチェックアウト
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # 👈 tokenを明示的に指定
       
       - name: Node.jsのセットアップ
         uses: actions/setup-node@v4
@@ -26,15 +31,16 @@ jobs:
           OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
         run: node .github/scripts/fetch-weather.js
       
-      - name: 変更をコミット
+      - name: 変更をコミット & プッシュ
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add public/data/weather.json
-          git diff --staged --quiet || git commit -m "🌤️ Update weather data [skip ci]"
-      
-      - name: 変更をプッシュ
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          
+          # 変更がある場合のみコミット
+          if git diff --staged --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "🌤️ Update weather data [skip ci]"
+            git push
+          fi
