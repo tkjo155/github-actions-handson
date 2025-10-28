@@ -1,0 +1,40 @@
+name: Update Weather Data
+
+# トリガー: 1時間ごと + 手動実行 + push時
+on:
+  schedule:
+    - cron: '0 * * * *'  # 毎時0分に実行
+  workflow_dispatch:  # 手動実行を許可
+  push:
+    branches: [ main ]
+
+jobs:
+  update-weather:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: コードをチェックアウト
+        uses: actions/checkout@v4
+      
+      - name: Node.jsのセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: 天気データを取得
+        env:
+          OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+        run: node .github/scripts/fetch-weather.js
+      
+      - name: 変更をコミット
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add public/data/weather.json
+          git diff --staged --quiet || git commit -m "🌤️ Update weather data [skip ci]"
+      
+      - name: 変更をプッシュ
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
