@@ -85,6 +85,9 @@ function displayCurrentWeather(data) {
     document.getElementById('humidity').textContent = `${current.main.humidity}%`;
     document.getElementById('windSpeed').textContent = `${current.wind.speed} m/s`;
     document.getElementById('feelsLike').textContent = `${Math.round(current.main.feels_like)}°C`;
+
+     // 現在の湿度を表示（気温の下）
+    document.getElementById('currentHumidity').textContent = `${current.main.humidity}%`;
     
     const iconCode = current.weather[0].icon;
     document.getElementById('currentIcon').textContent = weatherIcons[iconCode] || '🌤️';
@@ -101,6 +104,10 @@ function displayCurrentWeather(data) {
     // おすすめの服装
     const clothing = recommendClothing(current.main.temp);
     document.getElementById('clothingInfo').textContent = clothing;
+
+    // 気圧・偏頭痛注意
+    const pressureInfo = checkPressureHeadache(current.main.pressure, data.forecast);
+    updatePressureInfo(pressureInfo);
     
     // 鹿児島の場合は火山灰情報を表示
     const ashCard = document.getElementById('ashCard');
@@ -274,7 +281,7 @@ function displayHourlyForecast(data) {
     
     const todayData = data.forecast.list.filter(item => 
         item.dt_txt.startsWith(todayStr)
-    ).slice(0, 8); // 最大8個（24時間分）
+    ).slice(0, 8);
     
     todayData.forEach(hour => {
         const time = new Date(hour.dt * 1000);
@@ -288,6 +295,11 @@ function displayHourlyForecast(data) {
             <div class="hourly-time">${timeStr}</div>
             <div class="hourly-icon">${weatherIcons[hour.weather[0].icon] || '🌤️'}</div>
             <div class="hourly-temp">${Math.round(hour.main.temp)}°C</div>
+            <div class="temp-range">
+                <span class="temp-high">${Math.round(hour.main.temp_max)}°</span>
+                <span class="temp-separator">/</span>
+                <span class="temp-low">${Math.round(hour.main.temp_min)}°</span>
+            </div>
             <div class="hourly-desc">${hour.weather[0].description}</div>
             ${isRain ? '<div class="rain-tag">☂️ 雨</div>' : ''}
         `;
@@ -315,6 +327,11 @@ function displayDailyForecast(data) {
             <div class="forecast-date">${dateStr} (${dayOfWeek})</div>
             <div class="forecast-icon">${weatherIcons[day.weather[0].icon] || '🌤️'}</div>
             <div class="forecast-temp">${Math.round(day.main.temp)}°C</div>
+            <div class="temp-range">
+                <span class="temp-high">${Math.round(day.main.temp_max)}°</span>
+                <span class="temp-separator">/</span>
+                <span class="temp-low">${Math.round(day.main.temp_min)}°</span>
+            </div>
             <div class="forecast-desc">${day.weather[0].description}</div>
         `;
         container.appendChild(forecastItem);
@@ -462,4 +479,67 @@ function forceReload() {
         });
     }
     location.reload(true);
+}
+
+// 気圧による偏頭痛リスクをチェック
+function checkPressureHeadache(currentPressure, forecast) {
+    // 気圧の変化を計算（今後6時間）
+    const next6Hours = forecast.list.slice(0, 2); // 3時間×2 = 6時間
+    
+    let maxPressure = currentPressure;
+    let minPressure = currentPressure;
+    
+    next6Hours.forEach(item => {
+        const pressure = item.main.pressure;
+        if (pressure > maxPressure) maxPressure = pressure;
+        if (pressure < minPressure) minPressure = pressure;
+    });
+    
+    const pressureChange = maxPressure - minPressure;
+    
+    // 気圧判定
+    let riskLevel = '低';
+    let message = '安定';
+    let isRisky = false;
+    
+    // 低気圧（1013hPa未満）
+    if (currentPressure < 1005) {
+        riskLevel = '高';
+        message = `⚠️ 低気圧注意（${currentPressure}hPa）`;
+        isRisky = true;
+    } else if (currentPressure < 1013) {
+        riskLevel = '中';
+        message = `△ やや低気圧（${currentPressure}hPa）`;
+        isRisky = true;
+    }
+    // 気圧の急変（6時間で5hPa以上変化）
+    else if (pressureChange >= 5) {
+        riskLevel = '高';
+        message = `⚠️ 気圧変化大（${pressureChange.toFixed(1)}hPa変化）`;
+        isRisky = true;
+    } else if (pressureChange >= 3) {
+        riskLevel = '中';
+        message = `△ 気圧変化あり（${pressureChange.toFixed(1)}hPa変化）`;
+        isRisky = true;
+    }
+    // 安定
+    else {
+        riskLevel = '低';
+        message = `安定（${currentPressure}hPa）`;
+    }
+    
+    return { riskLevel, message, isRisky, pressure: currentPressure };
+}
+
+function updatePressureInfo(info) {
+    const pressureCard = document.getElementById('pressureCard');
+    const pressureInfoEl = document.getElementById('pressureInfo');
+    
+    pressureInfoEl.textContent = info.message;
+    
+    if (info.isRisky) {
+        pressureCard.classList.add('warning');
+    } else {
+        pressureCard.classList.remove('warning');
+    }
 }

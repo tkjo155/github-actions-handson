@@ -59,8 +59,13 @@
                 <div class="weather-main">
                     <div class="weather-icon-large" id="currentIcon">☀️</div>
                     <div class="weather-details">
+                        <div class="current-label">現在の気温</div>
                         <div class="temperature" id="temperature">25°C</div>
                         <div class="description" id="description">晴れ</div>
+                         <!-- 湿度を追加 -->
+        <div class="current-humidity">
+            💧 湿度 <span id="currentHumidity">60%</span>
+        </div>
                     </div>
                 </div>
 
@@ -81,6 +86,15 @@
                             <div class="info-value" id="clothingInfo">長袖シャツ</div>
                         </div>
                     </div>
+
+                        <!-- 気圧・偏頭痛注意を追加 -->
+    <div class="info-card" id="pressureCard">
+        <span class="info-icon">🤕</span>
+        <div class="info-content">
+            <div class="info-label">気圧・偏頭痛</div>
+            <div class="info-value" id="pressureInfo">注意</div>
+        </div>
+    </div>
 
                     <div class="info-card" id="ashCard" style="display: none;">
                         <span class="info-icon">🌋</span>

@@ -143,6 +143,15 @@ h1 {
     text-align: center;
 }
 
+.current-label {
+    font-size: 0.9rem;
+    color: #999;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .temperature {
     font-size: clamp(3rem, 8vw, 4rem);
     font-weight: 700;
@@ -465,4 +474,41 @@ footer a:hover {
     .tab-btn {
         flex: 0 0 auto;
     }
+}
+
+/* 現在の湿度 */
+.current-humidity {
+    margin-top: 12px;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: #666;
+    font-weight: 600;
+}
+
+.current-humidity span {
+    color: #0066cc;
+    font-weight: 700;
+}
+
+/* 温度範囲表示 */
+.temp-range {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4px;
+    font-size: 0.9rem;
+}
+
+.temp-high {
+    color: #ff6b35;
+    font-weight: 700;
+}
+
+.temp-low {
+    color: #4dabf7;
+    font-weight: 700;
+}
+
+.temp-separator {
+    color: #999;
 }
