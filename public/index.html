@@ -3,32 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>天気ダッシュボード - GitHub Actions Demo</title>
+    <title>天気ダッシュボード - 関西＆鹿児島</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>🌤️ 天気ダッシュボード</h1>
-            <p class="subtitle">GitHub Actions + OpenWeatherMap API</p>
+            <p class="subtitle">大阪・神戸・鹿児島の詳細天気情報</p>
             <div class="update-info">
                 <span id="lastUpdate">更新中...</span>
             </div>
         </header>
 
-        <div class="search-container">
-            <input type="text" id="cityInput" placeholder="都市名を入力 (例: Tokyo, Osaka, London)" value="Tokyo">
-            <button id="searchBtn">🔍 検索</button>
+        <div class="location-tabs">
+            <button class="tab-btn active" onclick="switchLocation('osaka-taisho')">🏙️ 大阪市大正区</button>
+            <button class="tab-btn" onclick="switchLocation('kobe-sannomiya')">⛰️ 神戸市三宮</button>
+            <button class="tab-btn" onclick="switchLocation('kagoshima')">🌋 鹿児島市</button>
         </div>
-        <!-- 人気都市のクイックアクセス -->
-<div class="quick-cities">
-    <button class="city-btn" onclick="quickSearch('Tokyo')">🗼 東京</button>
-    <button class="city-btn" onclick="quickSearch('Osaka')">🏯 大阪</button>
-    <button class="city-btn" onclick="quickSearch('Kyoto')">⛩️ 京都</button>
-    <button class="city-btn" onclick="quickSearch('London')">🇬🇧 ロンドン</button>
-    <button class="city-btn" onclick="quickSearch('New York')">🗽 NY</button>
-    <button class="city-btn" onclick="quickSearch('Paris')">🗼 パリ</button>
-</div>
 
         <div id="loading" class="loading">
             <div class="spinner"></div>
@@ -43,14 +35,61 @@
         <div id="weatherContent" style="display: none;">
             <!-- 現在の天気 -->
             <section class="current-weather">
+                <div class="location-name">
+                    <h2 id="locationName">大阪市大正区</h2>
+                </div>
+
                 <div class="weather-main">
                     <div class="weather-icon-large" id="currentIcon">☀️</div>
                     <div class="weather-details">
-                        <h2 id="cityName">Tokyo</h2>
                         <div class="temperature" id="temperature">25°C</div>
                         <div class="description" id="description">晴れ</div>
                     </div>
                 </div>
+
+                <!-- 重要情報 -->
+                <div class="important-info">
+                    <div class="info-card" id="umbrellaCard">
+                        <span class="info-icon">☂️</span>
+                        <div class="info-content">
+                            <div class="info-label">傘の必要性</div>
+                            <div class="info-value" id="umbrellaInfo">不要</div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <span class="info-icon">👔</span>
+                        <div class="info-content">
+                            <div class="info-label">おすすめの服装</div>
+                            <div class="info-value" id="clothingInfo">長袖シャツ</div>
+                        </div>
+                    </div>
+
+                    <div class="info-card" id="ashCard" style="display: none;">
+                        <span class="info-icon">🌋</span>
+                        <div class="info-content">
+                            <div class="info-label">火山灰情報</div>
+                            <div class="info-value" id="ashInfo">注意</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 気温情報 -->
+                <div class="temp-info">
+                    <div class="temp-item">
+                        <span class="temp-label">最高気温</span>
+                        <span class="temp-value high" id="maxTemp">28°C</span>
+                    </div>
+                    <div class="temp-item">
+                        <span class="temp-label">最低気温</span>
+                        <span class="temp-value low" id="minTemp">18°C</span>
+                    </div>
+                    <div class="temp-item">
+                        <span class="temp-label">体感温度</span>
+                        <span class="temp-value" id="feelsLike">23°C</span>
+                    </div>
+                </div>
+
                 <div class="weather-stats">
                     <div class="stat-item">
                         <span class="stat-icon">💧</span>
@@ -62,16 +101,14 @@
                         <span class="stat-label">風速</span>
                         <span class="stat-value" id="windSpeed">5 m/s</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">🌡️</span>
-                        <span class="stat-label">体感温度</span>
-                        <span class="stat-value" id="feelsLike">23°C</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">👁️</span>
-                        <span class="stat-label">視界</span>
-                        <span class="stat-value" id="visibility">10 km</span>
-                    </div>
+                </div>
+            </section>
+
+            <!-- 時間帯別の天気 -->
+            <section class="hourly-forecast">
+                <h3>⏰ 今日の天気（3時間ごと）</h3>
+                <div class="hourly-container" id="hourlyContainer">
+                    <!-- JavaScriptで動的に生成 -->
                 </div>
             </section>
 

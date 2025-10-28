@@ -3,7 +3,29 @@ const fs = require('fs');
 const path = require('path');
 
 const API_KEY = process.env.OPENWEATHER_API_KEY;
-const CITIES = ['Tokyo', 'Osaka', 'Kyoto', 'London', 'New York', 'Paris'];
+
+// 特定の地点を緯度経度で指定
+const LOCATIONS = [
+    {
+        name: '大阪市大正区',
+        lat: 34.6658,
+        lon: 135.4692,
+        key: 'osaka-taisho'
+    },
+    {
+        name: '神戸市三宮',
+        lat: 34.6937,
+        lon: 135.1955,
+        key: 'kobe-sannomiya'
+    },
+    {
+        name: '鹿児島市',
+        lat: 31.5969,
+        lon: 130.5571,
+        key: 'kagoshima',
+        hasAsh: true  // 火山灰情報を表示
+    }
+];
 
 if (!API_KEY) {
     console.error('❌ API key not found!');
@@ -26,28 +48,30 @@ function fetchData(url) {
     });
 }
 
-async function fetchWeatherForCity(city) {
+async function fetchWeatherForLocation(location) {
     try {
-        console.log(`📍 Fetching weather for ${city}...`);
+        console.log(`📍 Fetching weather for ${location.name}...`);
         
         // 現在の天気
-        const currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=ja`;
+        const currentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${API_KEY}&units=metric&lang=ja`;
         const current = await fetchData(currentUrl);
         
-        // 5日間予報
-        const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric&lang=ja`;
+        // 5日間予報（3時間ごと）
+        const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${location.lat}&lon=${location.lon}&appid=${API_KEY}&units=metric&lang=ja`;
         const forecast = await fetchData(forecastUrl);
         
-        console.log(`✅ Successfully fetched weather for ${city}`);
+        console.log(`✅ Successfully fetched weather for ${location.name}`);
         
         return {
-            city: city,
+            name: location.name,
+            key: location.key,
+            hasAsh: location.hasAsh || false,
             current: current,
             forecast: forecast,
             lastUpdate: new Date().toISOString()
         };
     } catch (error) {
-        console.error(`❌ Error fetching weather for ${city}:`, error.message);
+        console.error(`❌ Error fetching weather for ${location.name}:`, error.message);
         return null;
     }
 }
@@ -58,10 +82,10 @@ async function main() {
     
     const weatherData = {};
     
-    for (const city of CITIES) {
-        const data = await fetchWeatherForCity(city);
+    for (const location of LOCATIONS) {
+        const data = await fetchWeatherForLocation(location);
         if (data) {
-            weatherData[city.toLowerCase()] = data;
+            weatherData[location.key] = data;
         }
         // API rate limitを避けるため少し待つ
         await new Promise(resolve => setTimeout(resolve, 1000));
@@ -77,7 +101,7 @@ async function main() {
     fs.writeFileSync(outputPath, JSON.stringify(weatherData, null, 2));
     
     console.log(`✅ Weather data saved to ${outputPath}`);
-    console.log(`📊 Total cities: ${Object.keys(weatherData).length}`);
+    console.log(`📊 Total locations: ${Object.keys(weatherData).length}`);
     console.log('🎉 Done!');
 }
 
