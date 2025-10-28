@@ -4,9 +4,9 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'public/**'  # publicフォルダの変更時に実行
+      - 'public/**'
   workflow_dispatch:
-  
+
 permissions:
   contents: read
   pages: write
@@ -22,6 +22,14 @@ jobs:
     steps:
       - name: コードをチェックアウト
         uses: actions/checkout@v4
+      
+      - name: Node.jsのセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: ビルド情報を生成
+        run: node .github/scripts/generate-build-info.js
       
       - name: GitHub Pagesの設定
         uses: actions/configure-pages@v4

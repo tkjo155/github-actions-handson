@@ -18,12 +18,12 @@ let currentLocation = 'osaka-taisho';
 document.addEventListener('DOMContentLoaded', () => {
     loadWeatherData();
 });
-
 async function loadWeatherData() {
     showLoading();
     hideError();
 
     try {
+        // 天気データを読み込み
         const response = await fetch('data/weather.json');
         if (!response.ok) {
             throw new Error('天気データの読み込みに失敗しました');
@@ -32,12 +32,55 @@ async function loadWeatherData() {
         weatherCache = await response.json();
         console.log('✅ Weather data loaded:', Object.keys(weatherCache));
         
+        // ビルド情報を読み込み
+        try {
+            const buildResponse = await fetch('data/build-info.json');
+            if (buildResponse.ok) {
+                const buildInfo = await buildResponse.json();
+                displayBuildTime(buildInfo.buildTime);
+            }
+        } catch (error) {
+            console.log('ビルド情報が見つかりません');
+        }
+        
         // デフォルトで大阪を表示
         displayWeatherForLocation('osaka-taisho');
     } catch (error) {
         console.error('Error loading weather data:', error);
         showError('天気データの読み込みに失敗しました。しばらく待ってから再度お試しください。');
     }
+}
+
+// ビルド時刻を表示
+function displayBuildTime(isoString) {
+    const date = new Date(isoString);
+    const now = new Date();
+    const diffMinutes = Math.floor((now - date) / 1000 / 60);
+    
+    let displayText;
+    if (diffMinutes < 1) {
+        displayText = '最終更新: たった今';
+    } else if (diffMinutes < 60) {
+        displayText = `最終更新: ${diffMinutes}分前`;
+    } else if (diffMinutes < 1440) { // 24時間未満
+        const hours = Math.floor(diffMinutes / 60);
+        displayText = `最終更新: 約${hours}時間前`;
+    } else {
+        const days = Math.floor(diffMinutes / 1440);
+        displayText = `最終更新: ${days}日前`;
+    }
+    
+    document.getElementById('lastUpdate').textContent = displayText;
+    
+    const timeStr = date.toLocaleString('ja-JP', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZone: 'Asia/Tokyo'
+    });
+    document.getElementById('footerUpdate').textContent = `デプロイ: ${timeStr}`;
 }
 
 function switchLocation(locationKey) {
@@ -69,7 +112,6 @@ function displayWeatherForLocation(locationKey) {
     displayCurrentWeather(locationData);
     displayHourlyForecast(locationData);
     displayDailyForecast(locationData);
-    updateLastUpdateTime(locationData.lastUpdate);
     showWeatherContent();
 }
 
