@@ -23,7 +23,6 @@ async function loadWeatherData() {
     hideError();
 
     try {
-        // 天気データを読み込み
         const response = await fetch('data/weather.json');
         if (!response.ok) {
             throw new Error('天気データの読み込みに失敗しました');
@@ -33,22 +32,94 @@ async function loadWeatherData() {
         console.log('✅ Weather data loaded:', Object.keys(weatherCache));
         
         // ビルド情報を読み込み
+        let buildTime = null;
         try {
             const buildResponse = await fetch('data/build-info.json');
             if (buildResponse.ok) {
                 const buildInfo = await buildResponse.json();
-                displayBuildTime(buildInfo.buildTime);
+                buildTime = buildInfo.buildTime;
             }
         } catch (error) {
             console.log('ビルド情報が見つかりません');
         }
         
         // デフォルトで大阪を表示
-        displayWeatherForLocation('osaka-taisho');
+        displayWeatherForLocation('osaka-taisho', buildTime);
     } catch (error) {
         console.error('Error loading weather data:', error);
         showError('天気データの読み込みに失敗しました。しばらく待ってから再度お試しください。');
     }
+}
+
+function displayWeatherForLocation(locationKey, buildTime) {
+    if (!weatherCache) {
+        showError('天気データがまだ読み込まれていません');
+        return;
+    }
+
+    const locationData = weatherCache[locationKey];
+
+    if (!locationData) {
+        showError(`データが見つかりません: ${locationKey}`);
+        return;
+    }
+
+    hideError();
+    displayCurrentWeather(locationData);
+    displayHourlyForecast(locationData);
+    displayDailyForecast(locationData);
+    displayUpdateInfo(locationData.lastUpdate, buildTime);
+    showWeatherContent();
+}
+
+// 更新情報を表示（天気データとサイト更新の両方）
+function displayUpdateInfo(dataTime, buildTime) {
+    const dataDate = new Date(dataTime);
+    const now = new Date();
+    
+    // 天気データの時刻
+    const dataTimeStr = dataDate.toLocaleString('ja-JP', {
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZone: 'Asia/Tokyo'
+    });
+    
+    let displayText = `天気データ: ${dataTimeStr}`;
+    
+    // サイト更新時刻（あれば）
+    if (buildTime) {
+        const buildDate = new Date(buildTime);
+        const diffMinutes = Math.floor((now - buildDate) / 1000 / 60);
+        
+        let buildText;
+        if (diffMinutes < 1) {
+            buildText = 'たった今';
+        } else if (diffMinutes < 60) {
+            buildText = `${diffMinutes}分前`;
+        } else {
+            const hours = Math.floor(diffMinutes / 60);
+            buildText = `約${hours}時間前`;
+        }
+        
+        displayText += ` | サイト更新: ${buildText}`;
+        
+        // フッターには詳細時刻
+        const buildTimeStr = buildDate.toLocaleString('ja-JP', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            timeZone: 'Asia/Tokyo'
+        });
+        document.getElementById('footerUpdate').textContent = `データ: ${dataTimeStr} | サイト: ${buildTimeStr}`;
+    } else {
+        document.getElementById('footerUpdate').textContent = dataTimeStr;
+    }
+    
+    document.getElementById('lastUpdate').textContent = displayText;
 }
 
 // ビルド時刻を表示
@@ -83,7 +154,7 @@ function displayBuildTime(isoString) {
     document.getElementById('footerUpdate').textContent = `デプロイ: ${timeStr}`;
 }
 
-function switchLocation(locationKey) {
+async function switchLocation(locationKey) {
     currentLocation = locationKey;
     
     // タブの切り替え
@@ -92,10 +163,22 @@ function switchLocation(locationKey) {
     });
     event.target.classList.add('active');
     
-    displayWeatherForLocation(locationKey);
+    // ビルド時刻を取得
+    let buildTime = null;
+    try {
+        const buildResponse = await fetch('data/build-info.json');
+        if (buildResponse.ok) {
+            const buildInfo = await buildResponse.json();
+            buildTime = buildInfo.buildTime;
+        }
+    } catch (error) {
+        console.log('ビルド情報が見つかりません');
+    }
+    
+    displayWeatherForLocation(locationKey, buildTime);
 }
 
-function displayWeatherForLocation(locationKey) {
+function displayWeatherForLocation(locationKey, buildTime) {
     if (!weatherCache) {
         showError('天気データがまだ読み込まれていません');
         return;
@@ -112,7 +195,57 @@ function displayWeatherForLocation(locationKey) {
     displayCurrentWeather(locationData);
     displayHourlyForecast(locationData);
     displayDailyForecast(locationData);
+    displayUpdateInfo(locationData.lastUpdate, buildTime); 
     showWeatherContent();
+}
+
+// 更新情報を表示（天気データとサイト更新の両方）
+function displayUpdateInfo(dataTime, buildTime) {
+    const dataDate = new Date(dataTime);
+    const now = new Date();
+    
+    // 天気データの時刻
+    const dataTimeStr = dataDate.toLocaleString('ja-JP', {
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZone: 'Asia/Tokyo'
+    });
+    
+    let displayText = `天気データ: ${dataTimeStr}`;
+    
+    // サイト更新時刻（あれば）
+    if (buildTime) {
+        const buildDate = new Date(buildTime);
+        const diffMinutes = Math.floor((now - buildDate) / 1000 / 60);
+        
+        let buildText;
+        if (diffMinutes < 1) {
+            buildText = 'たった今';
+        } else if (diffMinutes < 60) {
+            buildText = `${diffMinutes}分前`;
+        } else {
+            const hours = Math.floor(diffMinutes / 60);
+            buildText = `約${hours}時間前`;
+        }
+        
+        displayText += ` | サイト更新: ${buildText}`;
+        
+        // フッターには詳細時刻
+        const buildTimeStr = buildDate.toLocaleString('ja-JP', {
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            timeZone: 'Asia/Tokyo'
+        });
+        document.getElementById('footerUpdate').textContent = `データ: ${dataTimeStr} | サイト: ${buildTimeStr}`;
+    } else {
+        document.getElementById('footerUpdate').textContent = dataTimeStr;
+    }
+    
+    document.getElementById('lastUpdate').textContent = displayText;
 }
 
 function displayCurrentWeather(data) {
@@ -413,20 +546,6 @@ function showError(message) {
 
 function hideError() {
     document.getElementById('error').style.display = 'none';
-}
-
-function updateLastUpdateTime(isoString) {
-    const date = new Date(isoString);
-    const timeStr = date.toLocaleString('ja-JP', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZone: 'Asia/Tokyo'
-    });
-    document.getElementById('lastUpdate').textContent = `最終更新: ${timeStr}`;
-    document.getElementById('footerUpdate').textContent = timeStr;
 }
 
 // ========================================
