@@ -369,3 +369,97 @@ function updateLastUpdateTime(isoString) {
     document.getElementById('lastUpdate').textContent = `最終更新: ${timeStr}`;
     document.getElementById('footerUpdate').textContent = timeStr;
 }
+
+// ========================================
+// 自動更新機能
+// ========================================
+
+// 最後の更新時刻を保存
+let lastDataUpdate = null;
+
+// 5分ごとにデータをチェック
+setInterval(checkForUpdates, 5 * 60 * 1000); // 5分 = 300,000ms
+
+// 更新をチェックする関数
+async function checkForUpdates() {
+    try {
+        // キャッシュを無視して最新データを取得
+        const response = await fetch(`data/weather.json?t=${Date.now()}`, {
+            cache: 'no-store'
+        });
+        
+        if (!response.ok) return;
+        
+        const newData = await response.json();
+        const firstCity = Object.keys(newData)[0];
+        const newUpdateTime = newData[firstCity]?.lastUpdate;
+        
+        // 初回設定
+        if (!lastDataUpdate) {
+            lastDataUpdate = newUpdateTime;
+            return;
+        }
+        
+        // 更新があったら自動リロード
+        if (newUpdateTime && newUpdateTime !== lastDataUpdate) {
+            console.log('🔄 新しい天気データを検出しました。更新します...');
+            
+            // 通知バナーを表示（オプション）
+            showUpdateNotification();
+            
+            // 3秒後にリロード
+            setTimeout(() => {
+                location.reload();
+            }, 3000);
+        }
+    } catch (error) {
+        console.error('更新チェックエラー:', error);
+    }
+}
+
+// 更新通知バナーを表示
+function showUpdateNotification() {
+    const banner = document.createElement('div');
+    banner.style.cssText = `
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #4CAF50;
+        color: white;
+        padding: 16px 32px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 10000;
+        font-weight: bold;
+        animation: slideDown 0.3s ease-out;
+    `;
+    banner.textContent = '🔄 新しい天気データが利用可能です。まもなく更新します...';
+    
+    // アニメーション
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideDown {
+            from { transform: translate(-50%, -100px); opacity: 0; }
+            to { transform: translate(-50%, 0); opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(banner);
+}
+
+// 初回設定
+if (weatherCache) {
+    const firstCity = Object.keys(weatherCache)[0];
+    lastDataUpdate = weatherCache[firstCity]?.lastUpdate;
+}
+// 強制リロード機能
+function forceReload() {
+    // キャッシュをクリアしてリロード
+    if ('caches' in window) {
+        caches.keys().then(names => {
+            names.forEach(name => caches.delete(name));
+        });
+    }
+    location.reload(true);
+}
