@@ -16,8 +16,8 @@
       ],
       "base": "stations",
       "main": {
-        "temp": 20.33,
-        "feels_like": 19.36,
+        "temp": 20.15,
+        "feels_like": 19.16,
         "temp_min": 19.23,
         "temp_max": 20.91,
         "pressure": 1017,
@@ -33,10 +33,10 @@
       "clouds": {
         "all": 75
       },
-      "dt": 1761627725,
+      "dt": 1761627908,
       "sys": {
         "type": 2,
-        "id": 268395,
+        "id": 268105,
         "country": "JP",
         "sunrise": 1761598740,
         "sunset": 1761637852
@@ -1533,7 +1533,7 @@
         "sunset": 1761637852
       }
     },
-    "lastUpdate": "2025-10-28T05:05:44.808Z"
+    "lastUpdate": "2025-10-28T05:08:34.268Z"
   },
   "osaka": {
     "city": "Osaka",
@@ -1552,27 +1552,28 @@
       ],
       "base": "stations",
       "main": {
-        "temp": 17.94,
-        "feels_like": 17.02,
-        "temp_min": 17.9,
-        "temp_max": 17.96,
+        "temp": 20.03,
+        "feels_like": 18.69,
+        "temp_min": 14.09,
+        "temp_max": 20.03,
         "pressure": 1021,
-        "humidity": 47,
+        "humidity": 23,
         "sea_level": 1021,
         "grnd_level": 1017
       },
       "visibility": 10000,
       "wind": {
-        "speed": 8.23,
-        "deg": 340
+        "speed": 6.14,
+        "deg": 345,
+        "gust": 6.94
       },
       "clouds": {
-        "all": 40
+        "all": 29
       },
-      "dt": 1761627945,
+      "dt": 1761628115,
       "sys": {
-        "type": 1,
-        "id": 8032,
+        "type": 2,
+        "id": 20513,
         "country": "JP",
         "sunrise": 1761599665,
         "sunset": 1761638937
@@ -1590,15 +1591,15 @@
         {
           "dt": 1761631200,
           "main": {
-            "temp": 17.94,
-            "feels_like": 17.02,
-            "temp_min": 17.94,
-            "temp_max": 18.65,
+            "temp": 20.03,
+            "feels_like": 18.69,
+            "temp_min": 18.65,
+            "temp_max": 20.03,
             "pressure": 1022,
             "sea_level": 1022,
             "grnd_level": 1018,
-            "humidity": 47,
-            "temp_kf": -0.71
+            "humidity": 23,
+            "temp_kf": 1.38
           },
           "weather": [
             {
@@ -1609,7 +1610,7 @@
             }
           ],
           "clouds": {
-            "all": 40
+            "all": 35
           },
           "wind": {
             "speed": 6.34,
@@ -1626,15 +1627,15 @@
         {
           "dt": 1761642000,
           "main": {
-            "temp": 17.29,
-            "feels_like": 16.25,
+            "temp": 18.68,
+            "feels_like": 17.39,
             "temp_min": 15.98,
-            "temp_max": 17.29,
+            "temp_max": 18.68,
             "pressure": 1023,
             "sea_level": 1023,
             "grnd_level": 1020,
-            "humidity": 45,
-            "temp_kf": 1.31
+            "humidity": 30,
+            "temp_kf": 2.7
           },
           "weather": [
             {
@@ -1645,7 +1646,7 @@
             }
           ],
           "clouds": {
-            "all": 41
+            "all": 38
           },
           "wind": {
             "speed": 4.81,
@@ -1662,26 +1663,26 @@
         {
           "dt": 1761652800,
           "main": {
-            "temp": 16.5,
-            "feels_like": 15.33,
+            "temp": 17.2,
+            "feels_like": 15.92,
             "temp_min": 15.78,
-            "temp_max": 16.5,
+            "temp_max": 17.2,
             "pressure": 1025,
             "sea_level": 1025,
             "grnd_level": 1021,
-            "humidity": 43,
-            "temp_kf": 0.72
+            "humidity": 36,
+            "temp_kf": 1.42
           },
           "weather": [
             {
-              "id": 803,
+              "id": 802,
               "main": "Clouds",
-              "description": "曇りがち",
-              "icon": "04n"
+              "description": "雲",
+              "icon": "03n"
             }
           ],
           "clouds": {
-            "all": 52
+            "all": 50
           },
           "wind": {
             "speed": 3,
@@ -3066,7 +3067,7 @@
         "sunset": 1761638937
       }
     },
-    "lastUpdate": "2025-10-28T05:05:45.892Z"
+    "lastUpdate": "2025-10-28T05:08:35.412Z"
   },
   "kyoto": {
     "city": "Kyoto",
@@ -3103,7 +3104,7 @@
       "clouds": {
         "all": 36
       },
-      "dt": 1761627946,
+      "dt": 1761627889,
       "sys": {
         "type": 2,
         "id": 265569,
@@ -4606,7 +4607,7 @@
         "sunset": 1761638851
       }
     },
-    "lastUpdate": "2025-10-28T05:05:46.984Z"
+    "lastUpdate": "2025-10-28T05:08:36.552Z"
   },
   "london": {
     "city": "London",
@@ -4625,8 +4626,8 @@
       ],
       "base": "stations",
       "main": {
-        "temp": 12.32,
-        "feels_like": 11.8,
+        "temp": 12.34,
+        "feels_like": 11.82,
         "temp_min": 11.68,
         "temp_max": 13.33,
         "pressure": 1006,
@@ -4636,13 +4637,13 @@
       },
       "visibility": 10000,
       "wind": {
-        "speed": 6.17,
-        "deg": 250
+        "speed": 7.2,
+        "deg": 240
       },
       "clouds": {
         "all": 100
       },
-      "dt": 1761627746,
+      "dt": 1761628060,
       "sys": {
         "type": 2,
         "id": 2075535,
@@ -4665,13 +4666,13 @@
           "main": {
             "temp": 12.34,
             "feels_like": 11.82,
-            "temp_min": 12.33,
+            "temp_min": 12.23,
             "temp_max": 12.34,
-            "pressure": 1007,
-            "sea_level": 1007,
+            "pressure": 1006,
+            "sea_level": 1006,
             "grnd_level": 1002,
             "humidity": 84,
-            "temp_kf": 0.01
+            "temp_kf": 0.11
           },
           "weather": [
             {
@@ -4699,15 +4700,15 @@
         {
           "dt": 1761642000,
           "main": {
-            "temp": 12.74,
-            "feels_like": 12.24,
-            "temp_min": 12.74,
-            "temp_max": 13.54,
-            "pressure": 1007,
-            "sea_level": 1007,
+            "temp": 12.71,
+            "feels_like": 12.2,
+            "temp_min": 12.71,
+            "temp_max": 13.46,
+            "pressure": 1006,
+            "sea_level": 1006,
             "grnd_level": 1003,
             "humidity": 83,
-            "temp_kf": -0.8
+            "temp_kf": -0.75
           },
           "weather": [
             {
@@ -6157,7 +6158,7 @@
         "sunset": 1761669685
       }
     },
-    "lastUpdate": "2025-10-28T05:05:48.054Z"
+    "lastUpdate": "2025-10-28T05:08:37.685Z"
   },
   "new york": {
     "city": "New York",
@@ -6176,8 +6177,8 @@
       ],
       "base": "stations",
       "main": {
-        "temp": 8.43,
-        "feels_like": 5.37,
+        "temp": 8.39,
+        "feels_like": 5.14,
         "temp_min": 5.72,
         "temp_max": 9.42,
         "pressure": 1027,
@@ -6187,13 +6188,13 @@
       },
       "visibility": 10000,
       "wind": {
-        "speed": 5.66,
-        "deg": 40
+        "speed": 6.17,
+        "deg": 10
       },
       "clouds": {
         "all": 0
       },
-      "dt": 1761627781,
+      "dt": 1761628002,
       "sys": {
         "type": 2,
         "id": 2008776,
@@ -6214,15 +6215,15 @@
         {
           "dt": 1761631200,
           "main": {
-            "temp": 8.43,
-            "feels_like": 5.61,
-            "temp_min": 8.43,
+            "temp": 8.39,
+            "feels_like": 5.56,
+            "temp_min": 8.39,
             "temp_max": 9.12,
             "pressure": 1027,
             "sea_level": 1027,
             "grnd_level": 1026,
             "humidity": 69,
-            "temp_kf": -0.69
+            "temp_kf": -0.73
           },
           "weather": [
             {
@@ -6250,15 +6251,15 @@
         {
           "dt": 1761642000,
           "main": {
-            "temp": 8.31,
-            "feels_like": 5.5,
+            "temp": 8.29,
+            "feels_like": 5.47,
             "temp_min": 8.08,
-            "temp_max": 8.31,
+            "temp_max": 8.29,
             "pressure": 1027,
             "sea_level": 1027,
             "grnd_level": 1025,
             "humidity": 66,
-            "temp_kf": 0.23
+            "temp_kf": 0.21
           },
           "weather": [
             {
@@ -6286,15 +6287,15 @@
         {
           "dt": 1761652800,
           "main": {
-            "temp": 8.01,
-            "feels_like": 4.89,
+            "temp": 8,
+            "feels_like": 4.87,
             "temp_min": 7.8,
-            "temp_max": 8.01,
+            "temp_max": 8,
             "pressure": 1027,
             "sea_level": 1027,
             "grnd_level": 1025,
             "humidity": 67,
-            "temp_kf": 0.21
+            "temp_kf": 0.2
           },
           "weather": [
             {
@@ -7696,7 +7697,7 @@
         "sunset": 1761688652
       }
     },
-    "lastUpdate": "2025-10-28T05:05:49.129Z"
+    "lastUpdate": "2025-10-28T05:08:38.808Z"
   },
   "paris": {
     "city": "Paris",
@@ -7754,13 +7755,13 @@
           "dt": 1761631200,
           "main": {
             "temp": 11.99,
-            "feels_like": 11.62,
+            "feels_like": 11.59,
             "temp_min": 11.25,
             "temp_max": 11.99,
             "pressure": 1014,
             "sea_level": 1014,
             "grnd_level": 1004,
-            "humidity": 91,
+            "humidity": 90,
             "temp_kf": 0.74
           },
           "weather": [
@@ -7790,13 +7791,13 @@
           "dt": 1761642000,
           "main": {
             "temp": 12.12,
-            "feels_like": 11.63,
+            "feels_like": 11.61,
             "temp_min": 12.12,
             "temp_max": 12.38,
             "pressure": 1014,
             "sea_level": 1014,
             "grnd_level": 1005,
-            "humidity": 86,
+            "humidity": 85,
             "temp_kf": -0.26
           },
           "weather": [
@@ -7826,13 +7827,13 @@
           "dt": 1761652800,
           "main": {
             "temp": 13.38,
-            "feels_like": 12.68,
+            "feels_like": 12.65,
             "temp_min": 13.38,
             "temp_max": 14.07,
             "pressure": 1013,
             "sea_level": 1013,
             "grnd_level": 1004,
-            "humidity": 73,
+            "humidity": 72,
             "temp_kf": -0.69
           },
           "weather": [
@@ -9250,6 +9251,6 @@
         "sunset": 1761669450
       }
     },
-    "lastUpdate": "2025-10-28T05:05:50.209Z"
+    "lastUpdate": "2025-10-28T05:08:39.932Z"
   }
 }
