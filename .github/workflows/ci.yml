@@ -10,6 +10,24 @@ on:
 
 # 実行する処理
 jobs:
+ # ジョブ名
+ lint:
+  runs-on: ubuntu-latest
+  steps:
+   - name: コードをチェックアウト
+     uses: actions/checkout@v4
+
+   - name: Node.jsのセットアップ
+     uses: actions/setup-node@v4
+     with: 
+      node-version:'20'
+  
+   - name: 依存関係のインストール
+     run: npm ci
+
+   - name: Lintの実行
+     run: npm run lint
+
  # ジョブ名：test
  test:
   # 実行環境
