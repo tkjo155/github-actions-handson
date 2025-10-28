@@ -4,9 +4,23 @@
   "description": "GitHub Actions CI/CD ハンズオン",
   "scripts": {
     "test": "jest",
+     "test:coverage": "jest --coverage",
     "lint":"eslint src/**/*.js",
     "lint:fix":"eslint src/**/*.js --fix"
   },
+   "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }},
   "keywords": [],
   "author": "",
   "license": "ISC",
