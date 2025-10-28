@@ -7,9 +7,8 @@ on:
   push:
     branches: [ main ]
 
-# 👇 この部分を追加
 permissions:
-  contents: write  # リポジトリへの書き込み権限
+  contents: write
 
 jobs:
   update-weather:
@@ -19,7 +18,7 @@ jobs:
       - name: コードをチェックアウト
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # 👈 tokenを明示的に指定
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Node.jsのセットアップ
         uses: actions/setup-node@v4
@@ -37,9 +36,8 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add public/data/weather.json
           
-          # 変更がある場合のみコミット
           if git diff --staged --quiet; then
-            echo "変更なし"
+            echo "✅ 変更なし"
           else
             git commit -m "🌤️ Update weather data [skip ci]"
             git push
