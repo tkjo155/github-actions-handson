@@ -6,6 +6,8 @@ on:
     paths:
       - 'public/**'
   workflow_dispatch:
+  schedule:
+    - cron: '10 */3 * * *'  # 3時間ごと（10分に実行）
 
 permissions:
   contents: read
