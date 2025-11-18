@@ -19,7 +19,7 @@
       "base": "stations",
       "main": {
         "temp": 6.02,
-        "feels_like": 3.67,
+        "feels_like": 6.02,
         "temp_min": 6.02,
         "temp_max": 6.02,
         "pressure": 1020,
@@ -29,13 +29,13 @@
       },
       "visibility": 10000,
       "wind": {
-        "speed": 3.09,
-        "deg": 330
+        "speed": 1.03,
+        "deg": 0
       },
       "clouds": {
-        "all": 18
+        "all": 20
       },
-      "dt": 1763483782,
+      "dt": 1763486670,
       "sys": {
         "type": 1,
         "id": 8032,
@@ -68,14 +68,14 @@
           },
           "weather": [
             {
-              "id": 802,
+              "id": 801,
               "main": "Clouds",
-              "description": "雲",
-              "icon": "03n"
+              "description": "薄い雲",
+              "icon": "02n"
             }
           ],
           "clouds": {
-            "all": 30
+            "all": 20
           },
           "wind": {
             "speed": 3.38,
@@ -104,14 +104,14 @@
           },
           "weather": [
             {
-              "id": 803,
+              "id": 802,
               "main": "Clouds",
-              "description": "曇りがち",
-              "icon": "04n"
+              "description": "雲",
+              "icon": "03n"
             }
           ],
           "clouds": {
-            "all": 53
+            "all": 47
           },
           "wind": {
             "speed": 2.92,
@@ -147,7 +147,7 @@
             }
           ],
           "clouds": {
-            "all": 68
+            "all": 65
           },
           "wind": {
             "speed": 3,
@@ -1508,7 +1508,7 @@
         "sunset": 1763538695
       }
     },
-    "lastUpdate": "2025-11-18T16:36:22.191Z"
+    "lastUpdate": "2025-11-18T17:24:31.014Z"
   },
   "kobe-sannomiya": {
     "name": "神戸市三宮",
@@ -1547,7 +1547,7 @@
       "clouds": {
         "all": 34
       },
-      "dt": 1763483783,
+      "dt": 1763486672,
       "sys": {
         "type": 1,
         "id": 8032,
@@ -3020,7 +3020,7 @@
         "sunset": 1763538757
       }
     },
-    "lastUpdate": "2025-11-18T16:36:23.292Z"
+    "lastUpdate": "2025-11-18T17:24:32.055Z"
   },
   "kagoshima": {
     "name": "鹿児島市",
@@ -3059,7 +3059,7 @@
       "clouds": {
         "all": 100
       },
-      "dt": 1763483784,
+      "dt": 1763486673,
       "sys": {
         "type": 2,
         "id": 47743,
@@ -4532,6 +4532,6 @@
         "sunset": 1763540244
       }
     },
-    "lastUpdate": "2025-11-18T16:36:24.398Z"
+    "lastUpdate": "2025-11-18T17:24:33.104Z"
   }
 }
