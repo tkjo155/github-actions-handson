@@ -19,23 +19,23 @@
       "base": "stations",
       "main": {
         "temp": 5.02,
-        "feels_like": 3.33,
+        "feels_like": 5.02,
         "temp_min": 5.02,
         "temp_max": 5.02,
         "pressure": 1024,
-        "humidity": 81,
+        "humidity": 87,
         "sea_level": 1024,
-        "grnd_level": 1018
+        "grnd_level": 1019
       },
       "visibility": 10000,
       "wind": {
-        "speed": 2.06,
-        "deg": 300
+        "speed": 0.51,
+        "deg": 0
       },
       "clouds": {
-        "all": 10
+        "all": 7
       },
-      "dt": 1763583947,
+      "dt": 1763587201,
       "sys": {
         "type": 1,
         "id": 8032,
@@ -54,42 +54,6 @@
       "cnt": 40,
       "list": [
         {
-          "dt": 1763586000,
-          "main": {
-            "temp": 5.02,
-            "feels_like": 4.15,
-            "temp_min": 5.02,
-            "temp_max": 8.96,
-            "pressure": 1024,
-            "sea_level": 1024,
-            "grnd_level": 1019,
-            "humidity": 81,
-            "temp_kf": -3.94
-          },
-          "weather": [
-            {
-              "id": 800,
-              "main": "Clear",
-              "description": "晴天",
-              "icon": "01n"
-            }
-          ],
-          "clouds": {
-            "all": 7
-          },
-          "wind": {
-            "speed": 1.37,
-            "deg": 81,
-            "gust": 1.65
-          },
-          "visibility": 10000,
-          "pop": 0,
-          "sys": {
-            "pod": "n"
-          },
-          "dt_txt": "2025-11-19 21:00:00"
-        },
-        {
           "dt": 1763596800,
           "main": {
             "temp": 6.95,
@@ -99,7 +63,7 @@
             "pressure": 1024,
             "sea_level": 1024,
             "grnd_level": 1019,
-            "humidity": 72,
+            "humidity": 76,
             "temp_kf": -3.85
           },
           "weather": [
@@ -129,13 +93,13 @@
           "dt": 1763607600,
           "main": {
             "temp": 10.84,
-            "feels_like": 9.52,
+            "feels_like": 9.57,
             "temp_min": 10.84,
             "temp_max": 13.75,
             "pressure": 1023,
             "sea_level": 1023,
             "grnd_level": 1017,
-            "humidity": 59,
+            "humidity": 61,
             "temp_kf": -2.91
           },
           "weather": [
@@ -1492,6 +1456,42 @@
             "pod": "n"
           },
           "dt_txt": "2025-11-24 18:00:00"
+        },
+        {
+          "dt": 1764018000,
+          "main": {
+            "temp": 12.48,
+            "feels_like": 11.25,
+            "temp_min": 12.48,
+            "temp_max": 12.48,
+            "pressure": 1016,
+            "sea_level": 1016,
+            "grnd_level": 1011,
+            "humidity": 56,
+            "temp_kf": 0
+          },
+          "weather": [
+            {
+              "id": 800,
+              "main": "Clear",
+              "description": "晴天",
+              "icon": "01n"
+            }
+          ],
+          "clouds": {
+            "all": 8
+          },
+          "wind": {
+            "speed": 1.35,
+            "deg": 97,
+            "gust": 1.41
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+            "pod": "n"
+          },
+          "dt_txt": "2025-11-24 21:00:00"
         }
       ],
       "city": {
@@ -1508,7 +1508,7 @@
         "sunset": 1763625066
       }
     },
-    "lastUpdate": "2025-11-19T20:25:47.506Z"
+    "lastUpdate": "2025-11-19T21:20:01.128Z"
   },
   "kobe-sannomiya": {
     "name": "神戸市三宮",
@@ -1530,24 +1530,24 @@
       "base": "stations",
       "main": {
         "temp": 4.91,
-        "feels_like": 3.83,
+        "feels_like": 4.91,
         "temp_min": 4.91,
-        "temp_max": 8.9,
+        "temp_max": 7.9,
         "pressure": 1024,
-        "humidity": 63,
+        "humidity": 64,
         "sea_level": 1024,
         "grnd_level": 1005
       },
       "visibility": 10000,
       "wind": {
-        "speed": 1.51,
-        "deg": 82,
-        "gust": 1.41
+        "speed": 1.31,
+        "deg": 104,
+        "gust": 1.24
       },
       "clouds": {
         "all": 4
       },
-      "dt": 1763583948,
+      "dt": 1763587202,
       "sys": {
         "type": 1,
         "id": 8032,
@@ -1565,42 +1565,6 @@
       "message": 0,
       "cnt": 40,
       "list": [
-        {
-          "dt": 1763586000,
-          "main": {
-            "temp": 4.91,
-            "feels_like": 4.91,
-            "temp_min": 4.91,
-            "temp_max": 7.84,
-            "pressure": 1024,
-            "sea_level": 1024,
-            "grnd_level": 1005,
-            "humidity": 64,
-            "temp_kf": -2.93
-          },
-          "weather": [
-            {
-              "id": 800,
-              "main": "Clear",
-              "description": "晴天",
-              "icon": "01n"
-            }
-          ],
-          "clouds": {
-            "all": 4
-          },
-          "wind": {
-            "speed": 1.31,
-            "deg": 104,
-            "gust": 1.24
-          },
-          "visibility": 10000,
-          "pop": 0,
-          "sys": {
-            "pod": "n"
-          },
-          "dt_txt": "2025-11-19 21:00:00"
-        },
         {
           "dt": 1763596800,
           "main": {
@@ -3007,6 +2971,42 @@
             "pod": "n"
           },
           "dt_txt": "2025-11-24 18:00:00"
+        },
+        {
+          "dt": 1764018000,
+          "main": {
+            "temp": 11.79,
+            "feels_like": 10.75,
+            "temp_min": 11.79,
+            "temp_max": 11.79,
+            "pressure": 1016,
+            "sea_level": 1016,
+            "grnd_level": 998,
+            "humidity": 66,
+            "temp_kf": 0
+          },
+          "weather": [
+            {
+              "id": 801,
+              "main": "Clouds",
+              "description": "薄い雲",
+              "icon": "02n"
+            }
+          ],
+          "clouds": {
+            "all": 11
+          },
+          "wind": {
+            "speed": 1.16,
+            "deg": 119,
+            "gust": 0.99
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+            "pod": "n"
+          },
+          "dt_txt": "2025-11-24 21:00:00"
         }
       ],
       "city": {
@@ -3023,7 +3023,7 @@
         "sunset": 1763625128
       }
     },
-    "lastUpdate": "2025-11-19T20:25:48.646Z"
+    "lastUpdate": "2025-11-19T21:20:02.170Z"
   },
   "kagoshima": {
     "name": "鹿児島市",
@@ -3044,25 +3044,25 @@
       ],
       "base": "stations",
       "main": {
-        "temp": 8.37,
-        "feels_like": 7.69,
-        "temp_min": 8.37,
-        "temp_max": 8.37,
-        "pressure": 1024,
-        "humidity": 74,
-        "sea_level": 1024,
+        "temp": 6.7,
+        "feels_like": 6.06,
+        "temp_min": 6.69,
+        "temp_max": 6.7,
+        "pressure": 1025,
+        "humidity": 75,
+        "sea_level": 1025,
         "grnd_level": 1006
       },
       "visibility": 10000,
       "wind": {
-        "speed": 1.59,
-        "deg": 341,
-        "gust": 1.54
+        "speed": 1.36,
+        "deg": 342,
+        "gust": 1.32
       },
       "clouds": {
         "all": 0
       },
-      "dt": 1763583949,
+      "dt": 1763587203,
       "sys": {
         "type": 2,
         "id": 47743,
@@ -3081,53 +3081,17 @@
       "cnt": 40,
       "list": [
         {
-          "dt": 1763586000,
-          "main": {
-            "temp": 8.37,
-            "feels_like": 7.95,
-            "temp_min": 8.24,
-            "temp_max": 8.37,
-            "pressure": 1025,
-            "sea_level": 1025,
-            "grnd_level": 1006,
-            "humidity": 75,
-            "temp_kf": 0.13
-          },
-          "weather": [
-            {
-              "id": 800,
-              "main": "Clear",
-              "description": "晴天",
-              "icon": "01n"
-            }
-          ],
-          "clouds": {
-            "all": 0
-          },
-          "wind": {
-            "speed": 1.36,
-            "deg": 342,
-            "gust": 1.32
-          },
-          "visibility": 10000,
-          "pop": 0,
-          "sys": {
-            "pod": "n"
-          },
-          "dt_txt": "2025-11-19 21:00:00"
-        },
-        {
           "dt": 1763596800,
           "main": {
-            "temp": 9.85,
-            "feels_like": 9.58,
-            "temp_min": 9.85,
+            "temp": 8.73,
+            "feels_like": 8.31,
+            "temp_min": 8.73,
             "temp_max": 12.8,
             "pressure": 1025,
             "sea_level": 1025,
             "grnd_level": 1007,
             "humidity": 71,
-            "temp_kf": -2.95
+            "temp_kf": -4.07
           },
           "weather": [
             {
@@ -3155,15 +3119,15 @@
         {
           "dt": 1763607600,
           "main": {
-            "temp": 13.71,
-            "feels_like": 12.81,
-            "temp_min": 13.71,
+            "temp": 13.15,
+            "feels_like": 12.19,
+            "temp_min": 13.15,
             "temp_max": 16.38,
             "pressure": 1024,
             "sea_level": 1024,
             "grnd_level": 1006,
             "humidity": 64,
-            "temp_kf": -2.67
+            "temp_kf": -3.23
           },
           "weather": [
             {
@@ -4528,6 +4492,42 @@
             "pod": "n"
           },
           "dt_txt": "2025-11-24 18:00:00"
+        },
+        {
+          "dt": 1764018000,
+          "main": {
+            "temp": 11.7,
+            "feels_like": 11.04,
+            "temp_min": 11.7,
+            "temp_max": 11.7,
+            "pressure": 1017,
+            "sea_level": 1017,
+            "grnd_level": 999,
+            "humidity": 81,
+            "temp_kf": 0
+          },
+          "weather": [
+            {
+              "id": 801,
+              "main": "Clouds",
+              "description": "薄い雲",
+              "icon": "02n"
+            }
+          ],
+          "clouds": {
+            "all": 14
+          },
+          "wind": {
+            "speed": 0.87,
+            "deg": 322,
+            "gust": 0.8
+          },
+          "visibility": 10000,
+          "pop": 0,
+          "sys": {
+            "pod": "n"
+          },
+          "dt_txt": "2025-11-24 21:00:00"
         }
       ],
       "city": {
@@ -4544,6 +4544,6 @@
         "sunset": 1763626619
       }
     },
-    "lastUpdate": "2025-11-19T20:25:49.778Z"
+    "lastUpdate": "2025-11-19T21:20:03.222Z"
   }
 }
