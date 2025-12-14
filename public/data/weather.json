@@ -19,23 +19,24 @@
       "base": "stations",
       "main": {
         "temp": 9.49,
-        "feels_like": 5.37,
+        "feels_like": 5.82,
         "temp_min": 7.9,
         "temp_max": 10.05,
         "pressure": 1012,
-        "humidity": 46,
+        "humidity": 49,
         "sea_level": 1012,
-        "grnd_level": 1006
+        "grnd_level": 1007
       },
       "visibility": 10000,
       "wind": {
-        "speed": 10.8,
-        "deg": 270
+        "speed": 8.75,
+        "deg": 270,
+        "gust": 14.4
       },
       "clouds": {
         "all": 20
       },
-      "dt": 1765704401,
+      "dt": 1765708006,
       "sys": {
         "type": 1,
         "id": 8032,
@@ -63,7 +64,7 @@
             "pressure": 1013,
             "sea_level": 1013,
             "grnd_level": 1009,
-            "humidity": 53,
+            "humidity": 55,
             "temp_kf": 1.07
           },
           "weather": [
@@ -99,7 +100,7 @@
             "pressure": 1015,
             "sea_level": 1015,
             "grnd_level": 1010,
-            "humidity": 56,
+            "humidity": 57,
             "temp_kf": 0.53
           },
           "weather": [
@@ -1517,7 +1518,7 @@
         "sunset": 1765698501
       }
     },
-    "lastUpdate": "2025-12-14T09:26:41.393Z"
+    "lastUpdate": "2025-12-14T10:26:46.730Z"
   },
   "kobe-sannomiya": {
     "name": "神戸市三宮",
@@ -1539,23 +1540,23 @@
       "base": "stations",
       "main": {
         "temp": 8.88,
-        "feels_like": 4.35,
+        "feels_like": 5.29,
         "temp_min": 8.88,
         "temp_max": 10.9,
-        "pressure": 1012,
+        "pressure": 1013,
         "humidity": 57,
-        "sea_level": 1012,
+        "sea_level": 1013,
         "grnd_level": 994
       },
       "visibility": 10000,
       "wind": {
-        "speed": 11.83,
-        "deg": 280
+        "speed": 7.72,
+        "deg": 290
       },
       "clouds": {
         "all": 20
       },
-      "dt": 1765704402,
+      "dt": 1765708007,
       "sys": {
         "type": 1,
         "id": 7963,
@@ -1564,8 +1565,8 @@
         "sunset": 1765698562
       },
       "timezone": 32400,
-      "id": 1848919,
-      "name": "脇浜町",
+      "id": 1859171,
+      "name": "神戸市",
       "cod": 200
     },
     "forecast": {
@@ -3043,7 +3044,7 @@
         "sunset": 1765698562
       }
     },
-    "lastUpdate": "2025-12-14T09:26:42.475Z"
+    "lastUpdate": "2025-12-14T10:26:47.787Z"
   },
   "kagoshima": {
     "name": "鹿児島市",
@@ -3064,25 +3065,25 @@
       ],
       "base": "stations",
       "main": {
-        "temp": 7.26,
-        "feels_like": 3.65,
-        "temp_min": 7.26,
-        "temp_max": 7.69,
-        "pressure": 1018,
-        "humidity": 62,
-        "sea_level": 1018,
-        "grnd_level": 1000
+        "temp": 6.7,
+        "feels_like": 3.23,
+        "temp_min": 6.69,
+        "temp_max": 6.7,
+        "pressure": 1019,
+        "humidity": 63,
+        "sea_level": 1019,
+        "grnd_level": 1001
       },
       "visibility": 10000,
       "wind": {
-        "speed": 6.31,
-        "deg": 320,
-        "gust": 11.55
+        "speed": 5.54,
+        "deg": 318,
+        "gust": 11.16
       },
       "clouds": {
-        "all": 88
+        "all": 91
       },
-      "dt": 1765704403,
+      "dt": 1765708008,
       "sys": {
         "type": 2,
         "id": 47743,
@@ -3103,15 +3104,15 @@
         {
           "dt": 1765713600,
           "main": {
-            "temp": 7.98,
-            "feels_like": 5.14,
-            "temp_min": 7.98,
+            "temp": 7.6,
+            "feels_like": 4.67,
+            "temp_min": 7.6,
             "temp_max": 9.41,
             "pressure": 1019,
             "sea_level": 1019,
             "grnd_level": 1002,
             "humidity": 63,
-            "temp_kf": -1.43
+            "temp_kf": -1.81
           },
           "weather": [
             {
@@ -3139,15 +3140,15 @@
         {
           "dt": 1765724400,
           "main": {
-            "temp": 8.22,
-            "feels_like": 5.82,
-            "temp_min": 8.22,
+            "temp": 8.03,
+            "feels_like": 5.59,
+            "temp_min": 8.03,
             "temp_max": 8.7,
             "pressure": 1021,
             "sea_level": 1021,
             "grnd_level": 1003,
             "humidity": 67,
-            "temp_kf": -0.48
+            "temp_kf": -0.67
           },
           "weather": [
             {
@@ -4564,6 +4565,6 @@
         "sunset": 1765700137
       }
     },
-    "lastUpdate": "2025-12-14T09:26:43.553Z"
+    "lastUpdate": "2025-12-14T10:26:48.850Z"
   }
 }
