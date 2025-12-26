@@ -19,23 +19,23 @@
       "base": "stations",
       "main": {
         "temp": 3.49,
-        "feels_like": -0.62,
+        "feels_like": 0.62,
         "temp_min": 3.02,
         "temp_max": 4.05,
         "pressure": 1019,
         "humidity": 68,
         "sea_level": 1019,
-        "grnd_level": 1013
+        "grnd_level": 1014
       },
       "visibility": 10000,
       "wind": {
-        "speed": 5.14,
-        "deg": 340
+        "speed": 3.09,
+        "deg": 300
       },
       "clouds": {
         "all": 20
       },
-      "dt": 1766741354,
+      "dt": 1766744951,
       "sys": {
         "type": 1,
         "id": 8032,
@@ -1511,7 +1511,7 @@
         "sunset": 1766735609
       }
     },
-    "lastUpdate": "2025-12-26T09:29:14.104Z"
+    "lastUpdate": "2025-12-26T10:29:11.512Z"
   },
   "kobe-sannomiya": {
     "name": "神戸市三宮",
@@ -1533,7 +1533,7 @@
       "base": "stations",
       "main": {
         "temp": 3.82,
-        "feels_like": -0.21,
+        "feels_like": 0.34,
         "temp_min": 2.91,
         "temp_max": 5.9,
         "pressure": 1019,
@@ -1543,13 +1543,13 @@
       },
       "visibility": 10000,
       "wind": {
-        "speed": 5.14,
+        "speed": 4.12,
         "deg": 350
       },
       "clouds": {
         "all": 20
       },
-      "dt": 1766741355,
+      "dt": 1766744952,
       "sys": {
         "type": 1,
         "id": 7963,
@@ -3034,7 +3034,7 @@
         "sunset": 1766735670
       }
     },
-    "lastUpdate": "2025-12-26T09:29:15.149Z"
+    "lastUpdate": "2025-12-26T10:29:12.678Z"
   },
   "kagoshima": {
     "name": "鹿児島市",
@@ -3042,8 +3042,8 @@
     "hasAsh": true,
     "current": {
       "coord": {
-        "lon": 130.5636,
-        "lat": 31.5973
+        "lon": 130.5571,
+        "lat": 31.5969
       },
       "weather": [
         {
@@ -3055,31 +3055,31 @@
       ],
       "base": "stations",
       "main": {
-        "temp": 1.74,
-        "feels_like": -1.9,
-        "temp_min": 1.74,
-        "temp_max": 3.96,
+        "temp": 0.59,
+        "feels_like": -3.11,
+        "temp_min": 0.59,
+        "temp_max": 0.69,
         "pressure": 1023,
-        "humidity": 64,
+        "humidity": 67,
         "sea_level": 1023,
-        "grnd_level": 1003
+        "grnd_level": 1004
       },
       "visibility": 10000,
       "wind": {
-        "speed": 3.64,
-        "deg": 340,
-        "gust": 7.27
+        "speed": 3.38,
+        "deg": 336,
+        "gust": 7.42
       },
       "clouds": {
         "all": 1
       },
-      "dt": 1766741343,
+      "dt": 1766744953,
       "sys": {
         "type": 2,
         "id": 47743,
         "country": "JP",
-        "sunrise": 1766700921,
-        "sunset": 1766737248
+        "sunrise": 1766700922,
+        "sunset": 1766737249
       },
       "timezone": 32400,
       "id": 7303136,
@@ -3094,15 +3094,15 @@
         {
           "dt": 1766750400,
           "main": {
-            "temp": 1.53,
-            "feels_like": -1.42,
-            "temp_min": 1.18,
-            "temp_max": 1.53,
+            "temp": 0.79,
+            "feels_like": -2.3,
+            "temp_min": 0.79,
+            "temp_max": 1.18,
             "pressure": 1023,
             "sea_level": 1023,
             "grnd_level": 1004,
             "humidity": 67,
-            "temp_kf": 0.35
+            "temp_kf": -0.39
           },
           "weather": [
             {
@@ -3130,15 +3130,15 @@
         {
           "dt": 1766761200,
           "main": {
-            "temp": 0.64,
-            "feels_like": -2.2,
+            "temp": 0.27,
+            "feels_like": -2.64,
             "temp_min": 0.11,
-            "temp_max": 0.64,
+            "temp_max": 0.27,
             "pressure": 1024,
             "sea_level": 1024,
             "grnd_level": 1005,
             "humidity": 70,
-            "temp_kf": 0.53
+            "temp_kf": 0.16
           },
           "weather": [
             {
@@ -4555,6 +4555,6 @@
         "sunset": 1766737249
       }
     },
-    "lastUpdate": "2025-12-26T09:29:16.190Z"
+    "lastUpdate": "2025-12-26T10:29:13.848Z"
   }
 }
