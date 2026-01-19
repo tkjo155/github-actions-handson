@@ -10,16 +10,16 @@
       },
       "weather": [
         {
-          "id": 804,
+          "id": 803,
           "main": "Clouds",
-          "description": "厚い雲",
+          "description": "曇りがち",
           "icon": "04n"
         }
       ],
       "base": "stations",
       "main": {
         "temp": 9.02,
-        "feels_like": 8,
+        "feels_like": 6.52,
         "temp_min": 9.02,
         "temp_max": 10.68,
         "pressure": 1013,
@@ -29,13 +29,13 @@
       },
       "visibility": 10000,
       "wind": {
-        "speed": 2.06,
-        "deg": 320
+        "speed": 4.63,
+        "deg": 340
       },
       "clouds": {
-        "all": 100
+        "all": 75
       },
-      "dt": 1768848082,
+      "dt": 1768850666,
       "sys": {
         "type": 1,
         "id": 8032,
@@ -68,14 +68,14 @@
           },
           "weather": [
             {
-              "id": 804,
+              "id": 803,
               "main": "Clouds",
-              "description": "厚い雲",
+              "description": "曇りがち",
               "icon": "04n"
             }
           ],
           "clouds": {
-            "all": 95
+            "all": 79
           },
           "wind": {
             "speed": 6.78,
@@ -104,14 +104,14 @@
           },
           "weather": [
             {
-              "id": 600,
-              "main": "Snow",
-              "description": "小雪",
-              "icon": "13d"
+              "id": 500,
+              "main": "Rain",
+              "description": "小雨",
+              "icon": "10d"
             }
           ],
           "clouds": {
-            "all": 95
+            "all": 87
           },
           "wind": {
             "speed": 8.79,
@@ -120,7 +120,7 @@
           },
           "visibility": 10000,
           "pop": 0.2,
-          "snow": {
+          "rain": {
             "3h": 0.21
           },
           "sys": {
@@ -1538,7 +1538,7 @@
         "sunset": 1768896852
       }
     },
-    "lastUpdate": "2026-01-19T18:41:22.637Z"
+    "lastUpdate": "2026-01-19T19:24:26.298Z"
   },
   "kobe-sannomiya": {
     "name": "神戸市三宮",
@@ -1577,7 +1577,7 @@
       "clouds": {
         "all": 100
       },
-      "dt": 1768848083,
+      "dt": 1768850667,
       "sys": {
         "type": 1,
         "id": 8032,
@@ -1646,10 +1646,10 @@
           },
           "weather": [
             {
-              "id": 600,
-              "main": "Snow",
-              "description": "小雪",
-              "icon": "13d"
+              "id": 500,
+              "main": "Rain",
+              "description": "小雨",
+              "icon": "10d"
             }
           ],
           "clouds": {
@@ -1662,7 +1662,7 @@
           },
           "visibility": 10000,
           "pop": 0.25,
-          "snow": {
+          "rain": {
             "3h": 0.22
           },
           "sys": {
@@ -3083,7 +3083,7 @@
         "sunset": 1768896914
       }
     },
-    "lastUpdate": "2026-01-19T18:41:23.751Z"
+    "lastUpdate": "2026-01-19T19:24:27.388Z"
   },
   "kagoshima": {
     "name": "鹿児島市",
@@ -3122,7 +3122,7 @@
       "clouds": {
         "all": 4
       },
-      "dt": 1768847928,
+      "dt": 1768850668,
       "sys": {
         "type": 2,
         "id": 47743,
@@ -4613,6 +4613,6 @@
         "sunset": 1768898420
       }
     },
-    "lastUpdate": "2026-01-19T18:41:24.853Z"
+    "lastUpdate": "2026-01-19T19:24:28.481Z"
   }
 }
