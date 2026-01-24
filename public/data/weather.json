@@ -19,7 +19,7 @@
       "base": "stations",
       "main": {
         "temp": 3.03,
-        "feels_like": -1.2,
+        "feels_like": -0.3,
         "temp_min": 2.9,
         "temp_max": 3.99,
         "pressure": 1019,
@@ -29,13 +29,13 @@
       },
       "visibility": 10000,
       "wind": {
-        "speed": 5.14,
-        "deg": 270
+        "speed": 3.6,
+        "deg": 260
       },
       "clouds": {
-        "all": 0
+        "all": 1
       },
-      "dt": 1769259280,
+      "dt": 1769261738,
       "sys": {
         "type": 1,
         "id": 8032,
@@ -56,15 +56,15 @@
         {
           "dt": 1769266800,
           "main": {
-            "temp": 3.21,
-            "feels_like": -2.73,
-            "temp_min": 3.21,
+            "temp": 3.03,
+            "feels_like": -2.96,
+            "temp_min": 3.03,
             "temp_max": 3.58,
-            "pressure": 1019,
-            "sea_level": 1019,
+            "pressure": 1018,
+            "sea_level": 1018,
             "grnd_level": 1013,
-            "humidity": 46,
-            "temp_kf": -0.37
+            "humidity": 44,
+            "temp_kf": -0.55
           },
           "weather": [
             {
@@ -75,7 +75,7 @@
             }
           ],
           "clouds": {
-            "all": 5
+            "all": 0
           },
           "wind": {
             "speed": 9.81,
@@ -92,15 +92,15 @@
         {
           "dt": 1769277600,
           "main": {
-            "temp": 3.2,
-            "feels_like": -2.64,
-            "temp_min": 3.2,
+            "temp": 3.11,
+            "feels_like": -2.76,
+            "temp_min": 3.11,
             "temp_max": 3.28,
             "pressure": 1018,
             "sea_level": 1018,
             "grnd_level": 1012,
-            "humidity": 47,
-            "temp_kf": -0.08
+            "humidity": 46,
+            "temp_kf": -0.17
           },
           "weather": [
             {
@@ -111,7 +111,7 @@
             }
           ],
           "clouds": {
-            "all": 2
+            "all": 0
           },
           "wind": {
             "speed": 9.48,
@@ -128,15 +128,15 @@
         {
           "dt": 1769288400,
           "main": {
-            "temp": 2.77,
-            "feels_like": -3.22,
+            "temp": 2.86,
+            "feels_like": -3.11,
             "temp_min": 2.77,
-            "temp_max": 2.77,
+            "temp_max": 2.86,
             "pressure": 1017,
             "sea_level": 1017,
             "grnd_level": 1011,
-            "humidity": 55,
-            "temp_kf": 0
+            "humidity": 52,
+            "temp_kf": 0.09
           },
           "weather": [
             {
@@ -1514,7 +1514,7 @@
         "sunset": 1769242693
       }
     },
-    "lastUpdate": "2026-01-24T12:54:40.077Z"
+    "lastUpdate": "2026-01-24T13:35:38.991Z"
   },
   "kobe-sannomiya": {
     "name": "神戸市三宮",
@@ -1536,23 +1536,23 @@
       "base": "stations",
       "main": {
         "temp": 3.82,
-        "feels_like": -2.05,
+        "feels_like": -1.91,
         "temp_min": 2.91,
         "temp_max": 4.9,
         "pressure": 1019,
-        "humidity": 48,
+        "humidity": 52,
         "sea_level": 1019,
         "grnd_level": 1000
       },
       "visibility": 10000,
       "wind": {
-        "speed": 10.29,
+        "speed": 9.77,
         "deg": 290
       },
       "clouds": {
         "all": 20
       },
-      "dt": 1769259281,
+      "dt": 1769261740,
       "sys": {
         "type": 1,
         "id": 7963,
@@ -1573,15 +1573,15 @@
         {
           "dt": 1769266800,
           "main": {
-            "temp": 2.96,
-            "feels_like": -2.81,
+            "temp": 3.82,
+            "feels_like": -1.68,
             "temp_min": 1.25,
-            "temp_max": 2.96,
+            "temp_max": 3.82,
             "pressure": 1019,
             "sea_level": 1019,
             "grnd_level": 1000,
             "humidity": 52,
-            "temp_kf": 1.71
+            "temp_kf": 2.57
           },
           "weather": [
             {
@@ -1592,7 +1592,7 @@
             }
           ],
           "clouds": {
-            "all": 17
+            "all": 20
           },
           "wind": {
             "speed": 8.99,
@@ -1609,26 +1609,26 @@
         {
           "dt": 1769277600,
           "main": {
-            "temp": 1.92,
-            "feels_like": -4.24,
+            "temp": 2.87,
+            "feels_like": -2.99,
             "temp_min": 0.97,
-            "temp_max": 1.92,
-            "pressure": 1018,
-            "sea_level": 1018,
+            "temp_max": 2.87,
+            "pressure": 1019,
+            "sea_level": 1019,
             "grnd_level": 999,
             "humidity": 53,
-            "temp_kf": 0.95
+            "temp_kf": 1.9
           },
           "weather": [
             {
-              "id": 800,
-              "main": "Clear",
-              "description": "晴天",
-              "icon": "01n"
+              "id": 801,
+              "main": "Clouds",
+              "description": "薄い雲",
+              "icon": "02n"
             }
           ],
           "clouds": {
-            "all": 10
+            "all": 15
           },
           "wind": {
             "speed": 9.19,
@@ -1645,15 +1645,15 @@
         {
           "dt": 1769288400,
           "main": {
-            "temp": 0.34,
-            "feels_like": -6.24,
+            "temp": 1.5,
+            "feels_like": -4.72,
             "temp_min": 0.34,
-            "temp_max": 0.34,
+            "temp_max": 1.5,
             "pressure": 1018,
             "sea_level": 1018,
             "grnd_level": 999,
-            "humidity": 64,
-            "temp_kf": 0
+            "humidity": 60,
+            "temp_kf": 1.16
           },
           "weather": [
             {
@@ -1664,7 +1664,7 @@
             }
           ],
           "clouds": {
-            "all": 35
+            "all": 30
           },
           "wind": {
             "speed": 8.97,
@@ -3034,7 +3034,7 @@
         "sunset": 1769242755
       }
     },
-    "lastUpdate": "2026-01-24T12:54:41.167Z"
+    "lastUpdate": "2026-01-24T13:35:40.077Z"
   },
   "kagoshima": {
     "name": "鹿児島市",
@@ -3056,24 +3056,24 @@
       "base": "stations",
       "main": {
         "temp": 4.48,
-        "feels_like": 0.77,
+        "feels_like": 0.84,
         "temp_min": 4.48,
-        "temp_max": 4.69,
+        "temp_max": 9.47,
         "pressure": 1025,
-        "humidity": 61,
+        "humidity": 60,
         "sea_level": 1025,
         "grnd_level": 1006
       },
       "visibility": 10000,
       "wind": {
-        "speed": 4.83,
+        "speed": 4.7,
         "deg": 320,
-        "gust": 11.11
+        "gust": 10.99
       },
       "clouds": {
         "all": 1
       },
-      "dt": 1769259282,
+      "dt": 1769261741,
       "sys": {
         "type": 2,
         "id": 47743,
@@ -3094,26 +3094,26 @@
         {
           "dt": 1769266800,
           "main": {
-            "temp": 5.06,
-            "feels_like": 1.61,
-            "temp_min": 5.06,
+            "temp": 4.48,
+            "feels_like": 0.89,
+            "temp_min": 4.48,
             "temp_max": 6.21,
-            "pressure": 1024,
-            "sea_level": 1024,
+            "pressure": 1025,
+            "sea_level": 1025,
             "grnd_level": 1006,
-            "humidity": 62,
-            "temp_kf": -1.15
+            "humidity": 60,
+            "temp_kf": -1.73
           },
           "weather": [
             {
-              "id": 801,
-              "main": "Clouds",
-              "description": "薄い雲",
-              "icon": "02n"
+              "id": 800,
+              "main": "Clear",
+              "description": "晴天",
+              "icon": "01n"
             }
           ],
           "clouds": {
-            "all": 20
+            "all": 3
           },
           "wind": {
             "speed": 4.6,
@@ -3130,26 +3130,26 @@
         {
           "dt": 1769277600,
           "main": {
-            "temp": 4.81,
-            "feels_like": 1.59,
-            "temp_min": 4.81,
+            "temp": 4.65,
+            "feels_like": 1.39,
+            "temp_min": 4.65,
             "temp_max": 4.98,
             "pressure": 1025,
             "sea_level": 1025,
             "grnd_level": 1006,
-            "humidity": 62,
-            "temp_kf": -0.17
+            "humidity": 61,
+            "temp_kf": -0.33
           },
           "weather": [
             {
-              "id": 801,
-              "main": "Clouds",
-              "description": "薄い雲",
-              "icon": "02n"
+              "id": 800,
+              "main": "Clear",
+              "description": "晴天",
+              "icon": "01n"
             }
           ],
           "clouds": {
-            "all": 12
+            "all": 3
           },
           "wind": {
             "speed": 4.07,
@@ -3166,15 +3166,15 @@
         {
           "dt": 1769288400,
           "main": {
-            "temp": 5.83,
-            "feels_like": 1.91,
-            "temp_min": 5.83,
+            "temp": 5.38,
+            "feels_like": 1.33,
+            "temp_min": 5.38,
             "temp_max": 5.83,
             "pressure": 1025,
             "sea_level": 1025,
             "grnd_level": 1006,
-            "humidity": 57,
-            "temp_kf": 0
+            "humidity": 58,
+            "temp_kf": -0.45
           },
           "weather": [
             {
@@ -4549,6 +4549,6 @@
         "sunset": 1769244240
       }
     },
-    "lastUpdate": "2026-01-24T12:54:42.268Z"
+    "lastUpdate": "2026-01-24T13:35:41.170Z"
   }
 }
